@@ -1,0 +1,354 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "TCC-API",
+    "collectionId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+    "dateExported": "2024-06-13T20:55:50.888Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "b2e0cbe2-0144-4c19-911e-15062a0f2a00",
+            "name": "usuarios",
+            "containerId": "",
+            "created": "2024-06-13T01:09:58.669Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ef40beff-4424-478b-a705-8e0aaa4e9776",
+            "name": "produtos",
+            "containerId": "",
+            "created": "2024-06-13T01:10:04.235Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "2c66f1f1-c778-4cf2-b40d-1b7b98d62ad6",
+            "name": "tipo_usuario",
+            "containerId": "",
+            "created": "2024-06-13T17:53:28.169Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "39fb6ec0-76f1-4155-b3ad-99b1e337da6d",
+            "name": "tipo_endereco",
+            "containerId": "",
+            "created": "2024-06-13T20:18:15.679Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "7cad958a-dfd6-41d1-8663-a46d85aa44ab",
+            "name": "tipo_pagamento_compra",
+            "containerId": "",
+            "created": "2024-06-13T20:34:45.466Z",
+            "sortNum": 70000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "d2c7cb20-fa99-4a3a-bd46-650b7d65817b",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "b2e0cbe2-0144-4c19-911e-15062a0f2a00",
+            "name": "listar",
+            "url": "localhost:3333/usuarios",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-06-13T01:10:34.797Z",
+            "modified": "2024-06-13T01:12:54.851Z",
+            "headers": []
+        },
+        {
+            "_id": "1142cea0-b71c-4642-a040-179a50c4d68c",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "b2e0cbe2-0144-4c19-911e-15062a0f2a00",
+            "name": "cadastrar",
+            "url": "localhost:3333/usuarios",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-06-13T01:18:38.030Z",
+            "modified": "2024-06-13T03:45:22.466Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"usu_nome\": \"Teste\",\n      \"usu_sexo\": \"Masculino\",\n      \"usu_data_nascimento\": \"1955-12-15\",\n      \"usu_email\": \"teste@gmail.com\",\n      \"usu_senha\": 1234,\n      \"usu_data_cadastro\": \"2024-06-12\",\n      \"tus_cod\": 1\n      \n    \n      \n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "16252a52-e529-40e6-aba4-18b3b5d9ddcf",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "b2e0cbe2-0144-4c19-911e-15062a0f2a00",
+            "name": "Apagar",
+            "url": "localhost:3333/usuarios/5",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-06-13T01:47:16.215Z",
+            "modified": "2024-06-13T04:46:51.508Z",
+            "headers": []
+        },
+        {
+            "_id": "b4d21dcf-6440-47d0-bf6d-78b0adbf08b3",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "b2e0cbe2-0144-4c19-911e-15062a0f2a00",
+            "name": "atualizar",
+            "url": "localhost:3333/usuarios/4",
+            "method": "PATCH",
+            "sortNum": 60000,
+            "created": "2024-06-13T01:48:42.231Z",
+            "modified": "2024-06-13T03:57:36.191Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n        \n      \"usu_nome\": \"Reynaldo\",\n      \"usu_sexo\": \"Masculino\",\n      \"usu_email\": \"reynaldo@gmail.com\",\n      \"usu_senha\": 1234\n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "a1b3bf30-7e98-4fd6-ac0b-3e7c5eda03cd",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "b2e0cbe2-0144-4c19-911e-15062a0f2a00",
+            "name": "login",
+            "url": "localhost:3333/usuarios/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-06-13T04:03:12.656Z",
+            "modified": "2024-06-13T04:46:38.978Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n  \n  \"usu_email\": \"vinny@gmail.com\",\n  \"usu_senha\": 1234\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "524a946a-a0e8-4e5d-b011-802825fec6b5",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "ef40beff-4424-478b-a705-8e0aaa4e9776",
+            "name": "listar",
+            "url": "localhost:3333/produtos",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-13T04:47:11.396Z",
+            "modified": "2024-06-13T04:47:19.983Z",
+            "headers": []
+        },
+        {
+            "_id": "33efb43b-65ba-46a2-840a-9efa0abc227b",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "ef40beff-4424-478b-a705-8e0aaa4e9776",
+            "name": "cadastrar",
+            "url": "localhost:3333/produtos",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-06-13T04:47:29.936Z",
+            "modified": "2024-06-13T04:51:55.464Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"prod_lote_id\": 5,\n      \"prod_preco\": \"8.50\"\n      \n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "777c40df-1157-4241-93fe-62b048ca582a",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "ef40beff-4424-478b-a705-8e0aaa4e9776",
+            "name": "atualizar",
+            "url": "localhost:3333/produtos/1",
+            "method": "PATCH",
+            "sortNum": 100000,
+            "created": "2024-06-13T04:49:01.403Z",
+            "modified": "2024-06-13T04:51:18.518Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"prod_preco\": \"17.50\"\n      \n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "cdeecccf-e9dc-4c20-8b17-c6d154c840a2",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "ef40beff-4424-478b-a705-8e0aaa4e9776",
+            "name": "Apagar",
+            "url": "localhost:3333/produtos/7",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-06-13T04:51:33.157Z",
+            "modified": "2024-06-13T04:52:02.657Z",
+            "headers": []
+        },
+        {
+            "_id": "8d8db054-3ac7-4223-86fd-197e8dd875c3",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "2c66f1f1-c778-4cf2-b40d-1b7b98d62ad6",
+            "name": "listar",
+            "url": "localhost:3333/tipousu",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-06-13T17:53:34.353Z",
+            "modified": "2024-06-13T20:28:20.537Z",
+            "headers": []
+        },
+        {
+            "_id": "72fccae9-4a3f-4d00-837f-76f71bb74628",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "2c66f1f1-c778-4cf2-b40d-1b7b98d62ad6",
+            "name": "cadastrar",
+            "url": "localhost:3333/tipousuario/",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-06-13T18:04:33.106Z",
+            "modified": "2024-06-13T20:17:17.692Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"tus_descricao\": \"Fila\"\n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "cb0a01ed-e3c9-4b65-bffb-490949763ad3",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "2c66f1f1-c778-4cf2-b40d-1b7b98d62ad6",
+            "name": "Atualizar",
+            "url": "localhost:3333/tipousuario/1",
+            "method": "PATCH",
+            "sortNum": 160000,
+            "created": "2024-06-13T20:09:36.719Z",
+            "modified": "2024-06-13T20:16:19.720Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"tus_descricao\": \"ADMINISTRADOR GERAL\"\n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "24645638-3119-4ce1-92af-652488736e6f",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "2c66f1f1-c778-4cf2-b40d-1b7b98d62ad6",
+            "name": "apagar",
+            "url": "localhost:3333/tipousuario/5",
+            "method": "DELETE",
+            "sortNum": 170000,
+            "created": "2024-06-13T20:16:41.334Z",
+            "modified": "2024-06-13T20:17:23.787Z",
+            "headers": []
+        },
+        {
+            "_id": "5fb4ecd9-53ff-4f6f-84bb-072550e46167",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "39fb6ec0-76f1-4155-b3ad-99b1e337da6d",
+            "name": "listar",
+            "url": "localhost:3333/tipoend",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2024-06-13T20:26:33.192Z",
+            "modified": "2024-06-13T20:27:31.594Z",
+            "headers": []
+        },
+        {
+            "_id": "5478863a-399a-4a17-b570-62e421578304",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "39fb6ec0-76f1-4155-b3ad-99b1e337da6d",
+            "name": "cadastrar",
+            "url": "localhost:3333/tipoend",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2024-06-13T20:26:53.734Z",
+            "modified": "2024-06-13T20:30:49.640Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"ten_descricao\": \"TESTE\"\n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "dbd5b88a-ae54-45a5-b1cd-55ec0630e187",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "39fb6ec0-76f1-4155-b3ad-99b1e337da6d",
+            "name": "atualizar",
+            "url": "localhost:3333/tipoend/3",
+            "method": "PATCH",
+            "sortNum": 200000,
+            "created": "2024-06-13T20:30:54.052Z",
+            "modified": "2024-06-13T20:31:13.737Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"ten_descricao\": \"alojamento\"\n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "50e3c79e-fa6b-4b90-b1f9-f646886e1b38",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "39fb6ec0-76f1-4155-b3ad-99b1e337da6d",
+            "name": "apagar",
+            "url": "localhost:3333/tipoend/3",
+            "method": "DELETE",
+            "sortNum": 210000,
+            "created": "2024-06-13T20:31:25.790Z",
+            "modified": "2024-06-13T20:31:31.649Z",
+            "headers": []
+        },
+        {
+            "_id": "ef1fa216-e434-46c5-a46e-55422f1e57e5",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "7cad958a-dfd6-41d1-8663-a46d85aa44ab",
+            "name": "listar",
+            "url": "localhost:3333/tipopagcompra",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2024-06-13T20:41:09.512Z",
+            "modified": "2024-06-13T20:41:23.780Z",
+            "headers": []
+        },
+        {
+            "_id": "a93c7142-0a1c-401b-bd41-6e88d846b495",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "7cad958a-dfd6-41d1-8663-a46d85aa44ab",
+            "name": "cadastrar",
+            "url": "localhost:3333/tipopagcompra",
+            "method": "POST",
+            "sortNum": 240000,
+            "created": "2024-06-13T20:41:30.170Z",
+            "modified": "2024-06-13T20:45:59.613Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"tpa_descricao\": \n      \"teste\"\n      \n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "0a18818e-fb28-499c-8a1e-72348b2c7953",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "7cad958a-dfd6-41d1-8663-a46d85aa44ab",
+            "name": "atualizar",
+            "url": "localhost:3333/tipopagcompra/5",
+            "method": "PATCH",
+            "sortNum": 250000,
+            "created": "2024-06-13T20:46:03.923Z",
+            "modified": "2024-06-13T20:46:55.239Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"tpa_descricao\": \n      \"TESTER\"\n      \n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "eb8862ed-c941-4e51-8ec0-faf7d8493a3e",
+            "colId": "92653fea-0fad-4bc0-b45b-a9dc53fbd48d",
+            "containerId": "7cad958a-dfd6-41d1-8663-a46d85aa44ab",
+            "name": "apagar",
+            "url": "localhost:3333/tipopagcompra/5",
+            "method": "DELETE",
+            "sortNum": 260000,
+            "created": "2024-06-13T20:47:03.023Z",
+            "modified": "2024-06-13T20:47:09.687Z",
+            "headers": []
+        }
+    ],
+    "ref": "l1zqB3hWP1ScqGOaxogox-hOQGu5dDTFNryuib09CuCPXZ69DPsHnjp6XZKh2jIiiStyPBomNvcNa54LM0Kggg"
+}
