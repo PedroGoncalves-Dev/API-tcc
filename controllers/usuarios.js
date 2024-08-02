@@ -247,12 +247,44 @@ module.exports = {
                     usu_data_cadastro: formatarData(usuario.usu_data_cadastro)
                 };
             });
+            
     
             return response.status(200).json({
                 sucesso: true,
                 mensagem: 'Lista de administradores.',
                 dados: dadosFormatados,
                 nItens
+            });
+        } catch (error) {
+            return response.status(500).json({
+                sucesso: false,
+                mensagem: 'Erro na requisição.',
+                dados: error.message
+            });
+        }
+    },
+
+    async TotalClientes(request, response) {
+        try {
+            // instruções SQL
+            const sql = `SELECT COUNT(*) AS total_usuarios FROM usuarios
+            WHERE tus_cod = 2
+
+                `;
+            // executa instruções SQL e armazena o resultado na variável usuários
+            const usuarios = await db.query(sql);
+            // armazena em uma variável o número de registros retornados
+            const nItens = usuarios[0].length;
+    
+            // Formatar as datas para remover as horas
+           
+            
+    
+            return response.status(200).json({
+                sucesso: true,
+                mensagem: 'Lista total de clientes.',
+                dados: usuarios[0],
+            
             });
         } catch (error) {
             return response.status(500).json({

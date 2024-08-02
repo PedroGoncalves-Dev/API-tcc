@@ -18,6 +18,7 @@ const TelefoneController = require('../controllers/telefones');
 
 router.get('/usuarios',UsuariosController.listarUsuarios);
 router.get('/usuarios/adms',UsuariosController.listarUsuariosAdministradores)
+router.get('/usuarios/totalclientes',UsuariosController.TotalClientes)
 router.get('/usuarios/cli',UsuariosController.listarUsuariosClientes)
 router.post('/usuarios',UsuariosController.cadastrarUsuarios); //body
 router.patch('/usuarios/:usu_id',UsuariosController.editarUsuarios); // params (URL) e body 
