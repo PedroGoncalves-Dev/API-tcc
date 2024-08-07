@@ -263,6 +263,46 @@ module.exports = {
         }
     },
 
+
+        async listarUsuarios(request, response) {
+            try {
+                // instruções SQL
+                const sql = `SELECT 
+                    usu_id, usu_nome, usu_sexo, usu_data_nascimento, usu_email, 
+                    usu_senha, usu_data_cadastro, tus_cod
+                    FROM usuarios 
+                    `;
+                // executa instruções SQL e armazena o resultado na variável usuários
+                const usuarios = await db.query(sql);
+                // armazena em uma variável o número de registros retornados
+                const nItens = usuarios[0].length;
+        
+                // Formatar as datas para remover as horas
+                const dadosFormatados = usuarios[0].map(usuario => {
+                    return {
+                        ...usuario,
+                        usu_data_nascimento: formatarData(usuario.usu_data_nascimento),
+                        usu_data_cadastro: formatarData(usuario.usu_data_cadastro)
+                    };
+                });
+        
+                return response.status(200).json({
+                    sucesso: true,
+                    mensagem: 'Lista de usuários.',
+                    dados: dadosFormatados,
+                    nItens
+                });
+            } catch (error) {
+                return response.status(500).json({
+                    sucesso: false,
+                    mensagem: 'Erro na requisição.',
+                    dados: error.message
+                });
+            }
+        },
+
+
+
     async listarUsuariosClientes(request, response) {
         try {
             // instruções SQL
