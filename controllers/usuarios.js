@@ -225,6 +225,50 @@ module.exports = {
             });
         }
     },
+
+    async listarFuncionarioUnico(request, response) {
+        try {
+            const {usu_id} = request.params;
+
+            // instruções SQL
+            const sql = `SELECT 
+                usu_id, usu_nome, usu_sexo, usu_data_nascimento, usu_email, 
+                usu_senha, usu_data_cadastro, tus_cod
+                FROM usuarios where tus_cod = 1 and usu_id = ?
+                `;
+
+
+            const funcionario = [usu_id];
+            // executa instruções SQL e armazena o resultado na variável usuários
+            const executarComando = await db.query(sql,funcionario);
+            // armazena em uma variável o número de registros retornados
+            //const id = executarComando[0].insertId;
+
+            const dadosFormatados = executarComando[0].map(usuario => {
+                return {
+                    ...usuario,
+                    usu_data_nascimento: formatarData(usuario.usu_data_nascimento),
+                    usu_data_cadastro: formatarData(usuario.usu_data_cadastro)
+                };
+            });
+
+    
+            // Formatar as datas para remover as horas
+            
+            return response.status(200).json({
+                sucesso: true,
+                mensagem: 'Lista de  unico funcionario.',
+                dados: dadosFormatados[0],
+                
+            });
+        } catch (error) {
+            return response.status(500).json({
+                sucesso: false,
+                mensagem: 'Erro na requisição.',
+                dados: error.message
+            });
+        }
+    },
     async listarUsuariosAdministradores(request, response) {
         try {
             // instruções SQL
@@ -392,6 +436,7 @@ module.exports = {
             });
         }
     },
+
 
     async apagarUsuarios(request, response) {
         try {
