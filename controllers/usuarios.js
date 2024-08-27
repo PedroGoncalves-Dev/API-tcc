@@ -193,8 +193,7 @@ module.exports = {
         try {
             // instruções SQL
             const sql = `SELECT 
-                usu_id, usu_nome, usu_sexo, usu_data_nascimento, usu_email, 
-                usu_senha, usu_data_cadastro, tus_cod
+                *
                 FROM usuarios
                 `;
             // executa instruções SQL e armazena o resultado na variável usuários
@@ -232,15 +231,15 @@ module.exports = {
 
             // instruções SQL
             const sql = `SELECT 
-                usu_id, usu_nome, usu_sexo, usu_data_nascimento, usu_email, 
-                usu_senha, usu_data_cadastro, tus_cod
+                usu_id, usu_nome, usu_sexo, usu_data_nascimento, usu_email, usu_cpf,
+                usu_senha, usu_data_cadastro, tus_cod, usu_perfil_foto
                 FROM usuarios where tus_cod = 1 and usu_id = ?
                 `;
 
 
-            const funcionario = [usu_id];
+           
             // executa instruções SQL e armazena o resultado na variável usuários
-            const executarComando = await db.query(sql,funcionario);
+            const executarComando = await db.query(sql,usu_id);
             // armazena em uma variável o número de registros retornados
             //const id = executarComando[0].insertId;
 
@@ -258,7 +257,7 @@ module.exports = {
             return response.status(200).json({
                 sucesso: true,
                 mensagem: 'Lista de  unico funcionario.',
-                dados: dadosFormatados[0],
+                dados: dadosFormatados[0]
                 
             });
         } catch (error) {
@@ -274,7 +273,7 @@ module.exports = {
             // instruções SQL
             const sql = `SELECT 
                 usu_id, usu_nome, usu_sexo, usu_data_nascimento, usu_email, 
-                usu_senha, usu_data_cadastro, tus_cod
+                usu_senha, usu_data_cadastro, tus_cod 
                 FROM usuarios 
                 WHERE tus_cod = 1
                 `;
@@ -341,7 +340,7 @@ module.exports = {
             });
         }
     },
->>>>>>> 5d393e107b199eba2a32abfb13320aad4543c0c4
+
 
     async listarUsuariosClientes(request, response) {
         try {
@@ -414,15 +413,35 @@ module.exports = {
     async editarUsuarios(request, response) {
         try {
             // parâmetros recebidos pelo corpo da requisição
-            const { usu_nome, usu_sexo, usu_email, usu_senha } = request.body;
+            const { 
+                
+                usu_nome,
+                usu_sexo,
+                usu_data_nascimento,
+                usu_email,
+                usu_senha,
+                tus_cod,
+                usu_cpf,
+                usu_perfil_foto
+                 } = request.body;
             // parâmetro recebido pela URL via params ex: /usuario/1
             const { usu_id } = request.params;
             // instruções SQL
-            const sql = `UPDATE usuarios SET usu_nome = ?, usu_sexo = ?, 
-                usu_email = ?, usu_senha = ? WHERE usu_id = ?;
+            const sql = `UPDATE usuarios SET  usu_nome = ?, usu_sexo = ?,
+            usu_data_nascimento = ?, 
+                usu_email = ?, usu_senha = ?, tus_cod = ?,  usu_cpf = ?, usu_perfil_foto = ?  WHERE usu_id = ?;
                  `;
             // preparo do array com dados que serão atualizados
-            const values = [usu_nome, usu_sexo, usu_email, usu_senha, usu_id];
+            const values = [
+                usu_nome,
+                usu_sexo,
+                usu_data_nascimento,
+                usu_email,
+                usu_senha,
+                tus_cod,
+                usu_cpf,
+                usu_perfil_foto,
+                usu_id];
             // execução e obtenção de confirmação da atualização realizada
             const atualizaDados = await db.query(sql, values);
 
@@ -538,5 +557,5 @@ function formatarData(data) {
     const ano = date.getUTCFullYear();
     const mes = String(date.getUTCMonth() + 1).padStart(2, '0');
     const dia = String(date.getUTCDate()).padStart(2, '0');
-    return `${ano}-${mes}-${dia}`;
+    return `${dia}-${mes}-${ano}`;
 }
